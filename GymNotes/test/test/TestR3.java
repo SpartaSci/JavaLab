@@ -1,5 +1,7 @@
 package test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -72,7 +74,15 @@ public class TestR3 {
 	public void testGetRoutineNoRoutine() throws GymNotesException {
 		g.getRoutine("sim@gmail.com", "Pull");
 	}
-	
+	@Test
+	public void testGetRoutine() throws GymNotesException{
+		g.addExerciseToRoutine("sim@gmail.com", "Push", "Panca piana bilanciere", "5x5");
+		g.addExerciseToRoutine("sim@gmail.com", "Push", "Panca piana manubri", "3x8");
+		g.addExerciseToRoutine("sim@gmail.com", "Push", "Plank", "2x60");
+		
+		String s = g.getRoutine("sim@gmail.com", "Push");
+		assertEquals("Panca piana bilanciere:5x5rep\nPanca piana manubri:3x8rep\nPlank:2x60min", s);
+	}
 	
 	
 }
