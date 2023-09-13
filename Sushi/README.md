@@ -6,6 +6,7 @@ La classe Principale è AllYouCanEat, che chiede il numero di tavoli.
 R1-R4 per creare le classi, dal R5 le faremo funzionare insieme.
 
 R1 Tavoli
+
 Nel locale ci sono N tavoli singoli, N dato durante l’inizializzazione di AllYouCanEat.
 Per ogni nuovo gruppo crea un nuovo tavolo tramite newTable() di AllYouCanEat fornendo il numero di coperti.
 Ogni due coperti si assegna un tavolo in più. Quindi il metodo assegna tot tavoli al gruppo tra quelli disponibili, e restituisce un'istanza Table.
@@ -14,6 +15,7 @@ addSushi() riceve un numero e incrementa di uno la quantità di quel numero;
 SendOrder() invia alla cucina l’ordine corrente (vedere R2);
 
 R2 Ordini
+
 I piatti sono numerati da 1 a 50
 I piatti vengono aggiunti all'ordine, una volta mandato in cucina, i successivi piatti faranno parte di un nuovo ordine. Un ordine può avere un massimo di piatti, pari a 2xNumCoperti.
 La classe Ordini deve gestire i seguenti metodi:
@@ -22,6 +24,7 @@ getCurrentOrder() restituisce la lista di piatti nell’ordine, come "<Quantità
 toString() deve ritornare una stringa “Tavolo #:<Q>x<N>;<Q>x<N>;......” 
 
 R3 Cucina e sala
+
 Gli ordini arrivano alla cucina, i piatti passeranno da uno status di "in preparazione" a uno di "pronto", una volta consegnato al tavolo passa a "Completato".
 (Consiglio: Per distinguerli, non usare gli ENUM ma creare tre distinte liste, tornerà utile dopo)
 I piatti vengono preparati secondo l'ordine di arrivo dell'ordinazione.
@@ -31,6 +34,7 @@ Cucina → metodo prepOrder() che prende il primo ordine in lista dai tavoli e l
 Sala → metodo servingOrder() che prende il primo ordine dalla lista sala e lo manda nei completati.
 
 R4 AllYouCanEat
+
 Per agevolare i metodi precedenti e gestire i casi di possibile errore (come lista vuota) implementare i metodi:
 sendOrderToKitchen() usata da Table
 getOrderForKitchen() e orderReadyForServing() usati da Cucina in prepOrder()
